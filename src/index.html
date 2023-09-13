@@ -9,5 +9,41 @@
   <body>
     <div id="root"></div>
     <script src="main.js"></script>
+    <section id="bienvenida">
+      <h1>Trivia</h1>
+      <div>
+      <label for="nombre"><b>Escribe tu nombre:</b></label>
+      <input type="text" id="nombre" placeholder="Tu Nombre">
+      <br>
+      <label for="Opcion"><b>Selecciona una opcion:</b></label>
+      <select id="Opcion">
+          <option value="Equipos">Equipos de fútbol</option>
+          <option value="Paises">Países</option>
+      </select>
+      <br>
+      <button onclick="iniciarTrivia()">Comenzar</button>
+  </section>
+
+  <section id="trivia" style="display: none;">
+      <h1>Bienvenido, <span id="nombreJugador"></span>!</h1>
+      <h2>Preguntas de: <span id="equipoJuego"></span></h2>
+      <h3>Pregunta <span id="numeroPregunta">1</span>:</h3>
+      <p id="pregunta"></p>
+      <form onsubmit="return responderPregunta()">
+          <label for="respuestaA"><input type="radio" name="respuesta" id="respuestaA"> <span id="opcionA"></span></label><br>
+          <label for="respuestaB"><input type="radio" name="respuesta" id="respuestaB"> <span id="opcionB"></span></label><br>
+          <label for="respuestaC"><input type="radio" name="respuesta" id="respuestaC"> <span id="opcionC"></span></label><br>
+          <input type="hidden" id="respuestaCorrecta">
+          <input type="submit" value="Responder">
+      </form>
+  </section>
+
+  <section id="resultado" style="display: none;">
+      <h1>Resultado Final</h1>
+      <p>Puntaje Total: <span id="puntajeFinal"></span></p>
+      <button onclick="volverAJugar()">Volver a jugar</button>
+  </section>
+</div>  
+  <script src="main.js"></script>
   </body>
 </html>
